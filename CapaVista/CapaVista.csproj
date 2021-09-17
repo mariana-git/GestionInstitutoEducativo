@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C98D7D55-5A51-4B36-9BD2-F8F6A819BB4F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CapaVista</RootNamespace>
+    <AssemblyName>CapaVista</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesDeUsuario\uc_GestionUsuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesDeUsuario\uc_GestionUsuarios.Designer.cs">
+      <DependentUpon>uc_GestionUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesDeUsuario\uc_GrillaSemanal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesDeUsuario\uc_GrillaSemanal.Designer.cs">
+      <DependentUpon>uc_GrillaSemanal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesDeUsuario\uc_GestionAulas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesDeUsuario\uc_GestionAulas.Designer.cs">
+      <DependentUpon>uc_GestionAulas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesDeUsuario\uc_GestionMaterias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesDeUsuario\uc_GestionMaterias.Designer.cs">
+      <DependentUpon>uc_GestionMaterias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesDeUsuario\uc_GestionAsistenciaEstudiantes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesDeUsuario\uc_GestionAsistenciaEstudiantes.Designer.cs">
+      <DependentUpon>uc_GestionAsistenciaEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesDeUsuario\uc_GestionCalificacionesEstudiantes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesDeUsuario\uc_GestionCalificacionesEstudiantes.Designer.cs">
+      <DependentUpon>uc_GestionCalificacionesEstudiantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Directivo\frmDirectivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Directivo\frmDirectivo.Designer.cs">
+      <DependentUpon>frmDirectivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Docente\frmDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Docente\frmDocente.Designer.cs">
+      <DependentUpon>frmDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Preceptor\frmPreceptor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Preceptor\frmPreceptor.Designer.cs">
+      <DependentUpon>frmPreceptor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlesDeUsuario\uc_GestionPersonas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesDeUsuario\uc_GestionPersonas.Designer.cs">
+      <DependentUpon>uc_GestionPersonas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin\frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesDeUsuario\uc_GestionUsuarios.resx">
+      <DependentUpon>uc_GestionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesDeUsuario\uc_GrillaSemanal.resx">
+      <DependentUpon>uc_GrillaSemanal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesDeUsuario\uc_GestionAulas.resx">
+      <DependentUpon>uc_GestionAulas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesDeUsuario\uc_GestionMaterias.resx">
+      <DependentUpon>uc_GestionMaterias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesDeUsuario\uc_GestionAsistenciaEstudiantes.resx">
+      <DependentUpon>uc_GestionAsistenciaEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesDeUsuario\uc_GestionCalificacionesEstudiantes.resx">
+      <DependentUpon>uc_GestionCalificacionesEstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Directivo\frmDirectivo.resx">
+      <DependentUpon>frmDirectivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Docente\frmDocente.resx">
+      <DependentUpon>frmDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Preceptor\frmPreceptor.resx">
+      <DependentUpon>frmPreceptor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesDeUsuario\uc_GestionPersonas.resx">
+      <DependentUpon>uc_GestionPersonas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
+      <Project>{ae0bfc30-ab6d-4f2d-8c88-0ebd6f865f58}</Project>
+      <Name>CapaLogica</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
