@@ -1,7 +1,7 @@
 ﻿
 namespace CapaVista.Directivo
 {
-    partial class frmDirectivo
+    partial class FrmDirectivo
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace CapaVista.Directivo
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDirectivo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDirectivo));
             this.btnMatricula = new System.Windows.Forms.Button();
             this.btnEstudiantes = new System.Windows.Forms.Button();
             this.btnAsistencia = new System.Windows.Forms.Button();

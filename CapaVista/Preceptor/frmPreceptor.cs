@@ -3,10 +3,11 @@ using System.Windows.Forms;
 
 namespace CapaVista.Preceptor
 {
-    public partial class frmPreceptor : Form
+    public partial class FrmPreceptor : Form
     {
-        private UserControl userControlActivo = null; //variable para manipular en el metodo de Control del Formulario Activo
-        public frmPreceptor()
+        
+        private UserControl userControlActivo = null; //variable para manipular en el metodo del ControlUser Activo en el panel
+        public FrmPreceptor()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
@@ -23,7 +24,9 @@ namespace CapaVista.Preceptor
         }
         private void BtnEstudiantes_Click(object sender, EventArgs e)
         {
-            AbrirUC(new ControlesdeUsuario.uc_GestionPersonas());
+            var PantallaEstudiantes = new ControlesdeUsuario.uc_GestionPersonas();
+            PantallaEstudiantes.Procedencia = "ESTUDIANTES";
+            AbrirUC(PantallaEstudiantes);
         }
                 
         private void BtnAsistencia_Click(object sender, EventArgs e)
@@ -43,7 +46,9 @@ namespace CapaVista.Preceptor
 
         private void BtnDocentes_Click(object sender, EventArgs e)
         {
-            AbrirUC(new ControlesdeUsuario.uc_GestionPersonas());
+            var PantallaDocentes = new ControlesdeUsuario.uc_GestionPersonas();
+            PantallaDocentes.Procedencia = "DOCENTES";
+            AbrirUC(PantallaDocentes);
         }
 
         private void BtnAsigAulas_Click(object sender, EventArgs e)

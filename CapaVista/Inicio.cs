@@ -37,10 +37,10 @@ namespace CapaVista
         private void BtnLogin_Click(object sender, EventArgs e)
         {
             //if (textBox1.Text == "alumno") AbrirForm(new frmEstudiante());
-            if (txtUsuario.Text == "p") new Preceptor.frmPreceptor().Show();               
-            else if (txtUsuario.Text == "d") new Docente.frmDocente().Show();
-            else if (txtUsuario.Text == "v") new Directivo.frmDirectivo().Show();
-            else if (txtUsuario.Text == "a") new Admin.frmAdmin().Show();
+            if (txtUsuario.Text == "p") new Preceptor.FrmPreceptor().Show();               
+            else if (txtUsuario.Text == "d") new Docente.FrmDocente().Show();
+            else if (txtUsuario.Text == "v") new Directivo.FrmDirectivo().Show();
+            else if (txtUsuario.Text == "a") new Admin.FrmAdmin().Show();
             else MessageBox.Show("Verifique los datos ingresados", "USUARIO INEXISTENTE");
 
             txtClave.Text = "";

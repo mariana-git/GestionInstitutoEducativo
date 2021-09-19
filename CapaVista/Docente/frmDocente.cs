@@ -3,10 +3,10 @@ using System.Windows.Forms;
 
 namespace CapaVista.Docente
 {
-    public partial class frmDocente : Form
+    public partial class FrmDocente : Form
     {
         private UserControl userControlActivo = null; //variable para manipular en el metodo de Control del Formulario Activo
-        public frmDocente()
+        public FrmDocente()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;

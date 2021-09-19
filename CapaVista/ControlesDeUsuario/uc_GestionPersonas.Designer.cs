@@ -31,18 +31,18 @@ namespace CapaVista.ControlesdeUsuario
         {
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnGuardarCambios = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvPersonas = new System.Windows.Forms.DataGridView();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.flpDatos = new System.Windows.Forms.FlowLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.FechaNac = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
@@ -82,7 +82,7 @@ namespace CapaVista.ControlesdeUsuario
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.Aqua;
-            this.btnConsultar.Location = new System.Drawing.Point(13, 82);
+            this.btnConsultar.Location = new System.Drawing.Point(13, 31);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(282, 45);
             this.btnConsultar.TabIndex = 44;
@@ -98,7 +98,7 @@ namespace CapaVista.ControlesdeUsuario
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.Aqua;
-            this.btnAgregar.Location = new System.Drawing.Point(13, 133);
+            this.btnAgregar.Location = new System.Drawing.Point(13, 82);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(282, 45);
             this.btnAgregar.TabIndex = 46;
@@ -106,34 +106,38 @@ namespace CapaVista.ControlesdeUsuario
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
-            // btnModificar
+            // btnGuardarCambios
             // 
-            this.btnModificar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnModificar.BackColor = System.Drawing.Color.Cyan;
-            this.btnModificar.FlatAppearance.BorderColor = System.Drawing.Color.Magenta;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.Navy;
-            this.btnModificar.Location = new System.Drawing.Point(154, 133);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(141, 45);
-            this.btnModificar.TabIndex = 45;
-            this.btnModificar.Text = "Guardar Cambios";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
+            this.btnGuardarCambios.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnGuardarCambios.BackColor = System.Drawing.Color.Cyan;
+            this.btnGuardarCambios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardarCambios.FlatAppearance.BorderColor = System.Drawing.Color.Magenta;
+            this.btnGuardarCambios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnGuardarCambios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarCambios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarCambios.ForeColor = System.Drawing.Color.Navy;
+            this.btnGuardarCambios.Location = new System.Drawing.Point(13, 82);
+            this.btnGuardarCambios.Name = "btnGuardarCambios";
+            this.btnGuardarCambios.Size = new System.Drawing.Size(282, 45);
+            this.btnGuardarCambios.TabIndex = 45;
+            this.btnGuardarCambios.Text = "Guardar Cambios";
+            this.btnGuardarCambios.UseVisualStyleBackColor = false;
+            this.btnGuardarCambios.Click += new System.EventHandler(this.BtnGuardarCambios_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Cyan;
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Magenta;
+            this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Navy;
             this.btnEliminar.Location = new System.Drawing.Point(13, 133);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(135, 45);
+            this.btnEliminar.Size = new System.Drawing.Size(282, 45);
             this.btnEliminar.TabIndex = 47;
-            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.Text = "Eliminar Registro";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
@@ -148,33 +152,23 @@ namespace CapaVista.ControlesdeUsuario
             this.dgvPersonas.Size = new System.Drawing.Size(856, 759);
             this.dgvPersonas.TabIndex = 85;
             // 
-            // btnCancelar
+            // btnVolver
             // 
-            this.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCancelar.BackColor = System.Drawing.Color.Cyan;
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Magenta;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.Navy;
-            this.btnCancelar.Location = new System.Drawing.Point(13, 82);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(282, 45);
-            this.btnCancelar.TabIndex = 88;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // label18
-            // 
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label18.Location = new System.Drawing.Point(47, 7);
-            this.label18.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(59, 20);
-            this.label18.TabIndex = 84;
-            this.label18.Text = "Legajo";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnVolver.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnVolver.BackColor = System.Drawing.Color.Cyan;
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatAppearance.BorderColor = System.Drawing.Color.Magenta;
+            this.btnVolver.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.Navy;
+            this.btnVolver.Location = new System.Drawing.Point(13, 31);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(282, 45);
+            this.btnVolver.TabIndex = 88;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.BtnVolver_Click);
             // 
             // textBox2
             // 
@@ -189,12 +183,12 @@ namespace CapaVista.ControlesdeUsuario
             this.flpDatos.AutoScroll = true;
             this.flpDatos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flpDatos.Controls.Add(this.textBox2);
-            this.flpDatos.Controls.Add(this.label18);
+            this.flpDatos.Controls.Add(this.label1);
             this.flpDatos.Controls.Add(this.textBox5);
             this.flpDatos.Controls.Add(this.label20);
             this.flpDatos.Controls.Add(this.textBox3);
             this.flpDatos.Controls.Add(this.label21);
-            this.flpDatos.Controls.Add(this.dateTimePicker1);
+            this.flpDatos.Controls.Add(this.FechaNac);
             this.flpDatos.Controls.Add(this.label22);
             this.flpDatos.Controls.Add(this.textBox6);
             this.flpDatos.Controls.Add(this.label23);
@@ -221,11 +215,23 @@ namespace CapaVista.ControlesdeUsuario
             this.flpDatos.Controls.Add(this.maskedTextBox2);
             this.flpDatos.Controls.Add(this.label26);
             this.flpDatos.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flpDatos.Location = new System.Drawing.Point(13, 181);
+            this.flpDatos.Location = new System.Drawing.Point(0, 181);
             this.flpDatos.Margin = new System.Windows.Forms.Padding(0);
             this.flpDatos.Name = "flpDatos";
             this.flpDatos.Size = new System.Drawing.Size(282, 495);
             this.flpDatos.TabIndex = 90;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(47, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.TabIndex = 114;
+            this.label1.Text = "Legajo";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox5
             // 
@@ -267,13 +273,16 @@ namespace CapaVista.ControlesdeUsuario
             this.label21.Text = "Apellidos";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dateTimePicker1
+            // FechaNac
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(112, 97);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(167, 20);
-            this.dateTimePicker1.TabIndex = 95;
+            this.FechaNac.Location = new System.Drawing.Point(112, 97);
+            this.FechaNac.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.FechaNac.MaxDate = new System.DateTime(2100, 9, 18, 0, 0, 0, 0);
+            this.FechaNac.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
+            this.FechaNac.Name = "FechaNac";
+            this.FechaNac.Size = new System.Drawing.Size(167, 20);
+            this.FechaNac.TabIndex = 95;
+            this.FechaNac.Value = new System.DateTime(2000, 2, 1, 0, 0, 0, 0);
             // 
             // label22
             // 
@@ -531,6 +540,7 @@ namespace CapaVista.ControlesdeUsuario
             // 
             this.btnCerrar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCerrar.BackColor = System.Drawing.Color.Navy;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.Magenta;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -545,15 +555,15 @@ namespace CapaVista.ControlesdeUsuario
             // 
             // lblRol
             // 
-            this.lblRol.BackColor = System.Drawing.Color.Transparent;
-            this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold);
+            this.lblRol.AutoSize = true;
+            this.lblRol.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.lblRol.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.lblRol.Location = new System.Drawing.Point(45, 25);
+            this.lblRol.Location = new System.Drawing.Point(606, 329);
             this.lblRol.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(221, 20);
+            this.lblRol.Size = new System.Drawing.Size(0, 31);
             this.lblRol.TabIndex = 92;
-            this.lblRol.Text = "TIPOPERSONA";
             this.lblRol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uc_GestionPersonas
@@ -563,37 +573,38 @@ namespace CapaVista.ControlesdeUsuario
             this.BackColor = System.Drawing.Color.Indigo;
             this.Controls.Add(this.lblRol);
             this.Controls.Add(this.flpDatos);
-            this.Controls.Add(this.btnConsultar);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.dgvPersonas);
+            this.Controls.Add(this.btnConsultar);
+            this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.btnGuardarCambios);
+            this.Controls.Add(this.btnEliminar);
             this.Name = "uc_GestionPersonas";
             this.Size = new System.Drawing.Size(1157, 759);
+            this.Load += new System.EventHandler(this.uc_GestionPersonas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).EndInit();
             this.flpDatos.ResumeLayout(false);
             this.flpDatos.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnGuardarCambios;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dgvPersonas;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.FlowLayoutPanel flpDatos;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker FechaNac;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label23;
@@ -621,5 +632,6 @@ namespace CapaVista.ControlesdeUsuario
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label lblRol;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\frmAdmin.cs">
+    <Compile Include="Admin\FrmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\frmAdmin.Designer.cs">
-      <DependentUpon>frmAdmin.cs</DependentUpon>
+    <Compile Include="Admin\FrmAdmin.Designer.cs">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlesDeUsuario\uc_GestionUsuarios.cs">
       <SubType>UserControl</SubType>
@@ -88,17 +88,17 @@
     <Compile Include="ControlesDeUsuario\uc_GestionCalificacionesEstudiantes.Designer.cs">
       <DependentUpon>uc_GestionCalificacionesEstudiantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Directivo\frmDirectivo.cs">
+    <Compile Include="Directivo\FrmDirectivo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Directivo\frmDirectivo.Designer.cs">
-      <DependentUpon>frmDirectivo.cs</DependentUpon>
+    <Compile Include="Directivo\FrmDirectivo.Designer.cs">
+      <DependentUpon>FrmDirectivo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Docente\frmDocente.cs">
+    <Compile Include="Docente\FrmDocente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Docente\frmDocente.Designer.cs">
-      <DependentUpon>frmDocente.cs</DependentUpon>
+    <Compile Include="Docente\FrmDocente.Designer.cs">
+      <DependentUpon>FrmDocente.cs</DependentUpon>
     </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
@@ -106,11 +106,11 @@
     <Compile Include="Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Preceptor\frmPreceptor.cs">
+    <Compile Include="Preceptor\FrmPreceptor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preceptor\frmPreceptor.Designer.cs">
-      <DependentUpon>frmPreceptor.cs</DependentUpon>
+    <Compile Include="Preceptor\FrmPreceptor.Designer.cs">
+      <DependentUpon>FrmPreceptor.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlesDeUsuario\uc_GestionPersonas.cs">
       <SubType>UserControl</SubType>
@@ -120,8 +120,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Admin\frmAdmin.resx">
-      <DependentUpon>frmAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="Admin\FrmAdmin.resx">
+      <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlesDeUsuario\uc_GestionUsuarios.resx">
       <DependentUpon>uc_GestionUsuarios.cs</DependentUpon>
@@ -141,17 +141,17 @@
     <EmbeddedResource Include="ControlesDeUsuario\uc_GestionCalificacionesEstudiantes.resx">
       <DependentUpon>uc_GestionCalificacionesEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Directivo\frmDirectivo.resx">
-      <DependentUpon>frmDirectivo.cs</DependentUpon>
+    <EmbeddedResource Include="Directivo\FrmDirectivo.resx">
+      <DependentUpon>FrmDirectivo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Docente\frmDocente.resx">
-      <DependentUpon>frmDocente.cs</DependentUpon>
+    <EmbeddedResource Include="Docente\FrmDocente.resx">
+      <DependentUpon>FrmDocente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preceptor\frmPreceptor.resx">
-      <DependentUpon>frmPreceptor.cs</DependentUpon>
+    <EmbeddedResource Include="Preceptor\FrmPreceptor.resx">
+      <DependentUpon>FrmPreceptor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlesDeUsuario\uc_GestionPersonas.resx">
       <DependentUpon>uc_GestionPersonas.cs</DependentUpon>
@@ -179,8 +179,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
-      <Project>{ae0bfc30-ab6d-4f2d-8c88-0ebd6f865f58}</Project>
+    <ProjectReference Include="..\CapaLogica2\CapaLogica.csproj">
+      <Project>{39b31bf5-89c9-4b4d-835e-879b122999d0}</Project>
       <Name>CapaLogica</Name>
     </ProjectReference>
   </ItemGroup>

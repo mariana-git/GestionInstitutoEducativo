@@ -3,10 +3,10 @@ using System.Windows.Forms;
 
 namespace CapaVista.Directivo
 {
-    public partial class frmDirectivo : Form
+    public partial class FrmDirectivo : Form
     {
         private UserControl userControlActivo = null; //variable para manipular en el metodo de Control del Formulario Activo
-        public frmDirectivo()
+        public FrmDirectivo()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;

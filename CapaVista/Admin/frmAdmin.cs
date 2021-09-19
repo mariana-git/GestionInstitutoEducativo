@@ -3,10 +3,10 @@ using System.Windows.Forms;
 
 namespace CapaVista.Admin
 {
-    public partial class frmAdmin : Form
+    public partial class FrmAdmin : Form
     {
         private UserControl userControlActivo = null; //variable para el metodo AbrirUC
-        public frmAdmin()
+        public FrmAdmin()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;

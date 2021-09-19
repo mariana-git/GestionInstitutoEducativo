@@ -1,7 +1,7 @@
 ﻿
 namespace CapaVista.Preceptor
 {
-    partial class frmPreceptor
+    partial class FrmPreceptor
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace CapaVista.Preceptor
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPreceptor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPreceptor));
             this.btnAsigAulas = new System.Windows.Forms.Button();
             this.btnCalificaciones = new System.Windows.Forms.Button();
             this.btnEstudiantes = new System.Windows.Forms.Button();
@@ -287,7 +287,7 @@ namespace CapaVista.Preceptor
             this.label2.Text = "INSTITUTO ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // frmPreceptor
+            // FrmPreceptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
