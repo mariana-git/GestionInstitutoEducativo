@@ -45,14 +45,10 @@
   <ItemGroup>
     <Compile Include="CD_CargaCombobox.cs" />
     <Compile Include="CD_Conexion.cs" />
+    <Compile Include="CD_Personas.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="Preceptor\CD_Preceptor_Personas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Admin\" />
-    <Folder Include="Directivo\" />
-    <Folder Include="Docente\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -37,20 +37,20 @@ namespace CapaVista.Preceptor
             this.btnGrilla = new System.Windows.Forms.Button();
             this.btnMaterias = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnDocentes = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panelPreceptor = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelPreceptor = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAsigAulas
@@ -165,8 +165,29 @@ namespace CapaVista.Preceptor
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(130, 828);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(130, 890);
             this.flowLayoutPanel1.TabIndex = 17;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(109, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 114;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.Magenta;
+            this.label2.Location = new System.Drawing.Point(13, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 31);
+            this.label2.TabIndex = 113;
+            this.label2.Text = "INSTITUTO ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnDocentes
             // 
@@ -193,43 +214,15 @@ namespace CapaVista.Preceptor
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(130, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1172, 54);
+            this.panel1.Size = new System.Drawing.Size(1172, 79);
             this.panel1.TabIndex = 19;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Navy;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1287, 54);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(15, 774);
-            this.panel2.TabIndex = 20;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Navy;
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(130, 813);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1157, 15);
-            this.panel3.TabIndex = 20;
-            // 
-            // panelPreceptor
-            // 
-            this.panelPreceptor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panelPreceptor.BackColor = System.Drawing.Color.Indigo;
-            this.panelPreceptor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPreceptor.Location = new System.Drawing.Point(130, 54);
-            this.panelPreceptor.Name = "panelPreceptor";
-            this.panelPreceptor.Size = new System.Drawing.Size(1157, 759);
-            this.panelPreceptor.TabIndex = 21;
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(928, 5);
+            this.label3.Location = new System.Drawing.Point(928, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(193, 20);
             this.label3.TabIndex = 24;
@@ -238,6 +231,7 @@ namespace CapaVista.Preceptor
             // 
             // btnLogout
             // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogout.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.Aqua;
@@ -246,7 +240,7 @@ namespace CapaVista.Preceptor
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.btnLogout.Location = new System.Drawing.Point(1015, 19);
+            this.btnLogout.Location = new System.Drawing.Point(1015, 38);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(109, 29);
@@ -259,50 +253,59 @@ namespace CapaVista.Preceptor
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1130, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(1130, 22);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(39, 41);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 23;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // panel2
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(109, 80);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 114;
-            this.pictureBox1.TabStop = false;
+            this.panel2.BackColor = System.Drawing.Color.Navy;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(1287, 79);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(15, 811);
+            this.panel2.TabIndex = 20;
             // 
-            // label2
+            // panel3
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.Magenta;
-            this.label2.Location = new System.Drawing.Point(13, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 31);
-            this.label2.TabIndex = 113;
-            this.label2.Text = "INSTITUTO ";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel3.BackColor = System.Drawing.Color.Navy;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(130, 875);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1157, 15);
+            this.panel3.TabIndex = 20;
+            // 
+            // panelPreceptor
+            // 
+            this.panelPreceptor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelPreceptor.BackColor = System.Drawing.Color.Indigo;
+            this.panelPreceptor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPreceptor.Location = new System.Drawing.Point(130, 79);
+            this.panelPreceptor.Name = "panelPreceptor";
+            this.panelPreceptor.Size = new System.Drawing.Size(1157, 796);
+            this.panelPreceptor.TabIndex = 21;
             // 
             // FrmPreceptor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1302, 828);
+            this.ClientSize = new System.Drawing.Size(1302, 890);
             this.Controls.Add(this.panelPreceptor);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "frmPreceptor";
+            this.MinimumSize = new System.Drawing.Size(1318, 929);
+            this.Name = "FrmPreceptor";
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

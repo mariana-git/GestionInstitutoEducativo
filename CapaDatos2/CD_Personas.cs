@@ -2,9 +2,9 @@
 using System.Data;
 using MySql.Data.MySqlClient;
 
-namespace CapaDatos.Preceptor
+namespace CapaDatos
 {
-    class CD_Preceptor_Personas : CD_Conexion
+    public class CD_Personas : CD_Conexion
     {
         
 
@@ -14,36 +14,44 @@ namespace CapaDatos.Preceptor
         private MySqlDataReader leer;
 
         #region ATRIBUTOS
-        private int legajo, cuil, codPostal, iDPersona;
-        private string nombre, apellido, fechaNac, documento, tipoDoc, telefono, calle, numeroCalle, piso, depto, localidad, provincia, email, sentencia;
+        private int idpersona, legajo, cuil, codPostal, tipoDoc, idlocalidad, idprovincia, numeroCalle;
+        private string nombre, apellido, fechaNac, documento, telefono, calle, piso, depto, email, sentencia, mensajeOk;
         #endregion
         #region PROPIERTIES
-        public int IDPersona { get => iDPersona; set => IDPersona = value; }
+        public int IdPersona { get => idpersona; set => idpersona = value; }
+        public int IdLocalidad { get => idlocalidad; set => idlocalidad = value; }
+        public int IdProvincia { get => idprovincia; set => idprovincia = value; }
+        public int CodPostal { get => codPostal; set => codPostal = value; }
+        public int TipoDoc { get => tipoDoc; set => tipoDoc = value; }
+        public int Cuil { get => cuil; set => cuil = value; }
         public int Legajo { get => legajo; set => legajo = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
         public string FechaNac { get => fechaNac; set => fechaNac = value; }
         public string Documento { get => documento; set => documento = value; }
-        public string TipoDoc { get => tipoDoc; set => tipoDoc = value; }
-        public int Cuil { get => cuil; set => cuil = value; }
         public string Telefono { get => telefono; set => telefono = value; }
         public string Calle { get => calle; set => calle = value; }
-        public string NumeroCalle { get => numeroCalle; set => numeroCalle = value; }
+        public int NumeroCalle { get => numeroCalle; set => numeroCalle = value; }
         public string Piso { get => piso; set => piso = value; }
         public string Depto { get => depto; set => depto = value; }
-        public string Localidad { get => localidad; set => localidad = value; }
-        public int CodPostal { get => codPostal; set => codPostal = value; }
-        public string Provincia { get => provincia; set => provincia = value; }
         public string Email { get => email; set => email = value; }
+
+
+
+
 
 
 
         #endregion
 
         #region METODOS 
-        public DataTable ConsultarEstudiante()
+        public DataTable ConsultarPersona(int rol, string busqueda)
         {
-            sentencia = "SELECT * FROM Personas";
+            DT.Clear();
+            if (busqueda != "") sentencia = $"SELECT * FROM personas WHERE (Nombre LIKE '%{busqueda}%'" +
+                    $" OR Apellido LIKE '%{busqueda}%' OR Documento LIKE '%{busqueda}%' OR Legajo LIKE '%{busqueda}%');";
+           else sentencia = $"SELECT * FROM Personas WHERE IDRol = {rol};";
+
             Comando.Connection = Conexion.Conectar();
             Comando.CommandText = sentencia;
             Comando.CommandTimeout = 15;
@@ -54,32 +62,37 @@ namespace CapaDatos.Preceptor
             return DT;
         }
 
-        public void AgregarEstudiante()
+        public string AgregarPersona(string rol)
         {
-            sentencia = "INSERT INTO Personas (IDPersona, Rol, Legajo, Nombre, Apelllido, FechaNac, Documento, " +
-                "TipoDoc,CUIL,Telefono,Calle,Numero,Piso,Departamento, Localidad, CP, Provincia) " +
-                "VALUES (NULL, 'Alumno'," + Legajo + ",'" + Nombre + "','" + Apellido + "','" + FechaNac + "','" + Documento + "'," +
-                "'" + TipoDoc + "'," + Cuil + ",'" + Telefono + "','" + Calle + "'," + NumeroCalle + ",'" +
-                Piso +"','" + Depto + "','" + Localidad + "'," + CodPostal + ",'" + Provincia + "')";
-
+            sentencia = "INSERT INTO Personas (IDPersona, IDRol, Legajo, Nombre, Apelllido, FechaNac, Documento, " +
+                "TipoDoc,CUIL,Telefono,Calle,Numero,Piso,Departamento, IDLocalidad, CP, IDProvincia) " +
+                $"VALUES (NULL, 1,{Legajo},{Nombre},{Apellido}, {FechaNac},{Documento},{TipoDoc},{Cuil},{Telefono}, {Calle}, {NumeroCalle} +" +
+                $", {Piso}, {Depto},{IdLocalidad},{CodPostal}, {IdProvincia});";
+           
             TransaccionSQLConectado(sentencia);
+            mensajeOk = "El registro fue agregado con éxito!";
+            return mensajeOk;
         }
 
-        public void ModificarEstudiante()
+        public string ModificarPersona(string rol)
         {
             sentencia = "UPDATE Personas SET " +
                 "Legajo = " + Legajo + ", Nombre ='" + Nombre + "',Apellido = '" + Apellido + "',FechaNac = '" + FechaNac + "'," +
                 "', Documento = '" + Documento + "',TipoDoc= '" + TipoDoc + "',CUIL = " + Cuil + ",Telefono = '" + Telefono + "'," +
                 "Calle ='" + Calle + "',Numero = " + NumeroCalle + ", Piso = '" + Piso + "',Departamento = '" + Depto + "', Localidad = " +
-                "'" + Localidad + "',CP = " + CodPostal + ", Provincia = '" + Provincia +"' WHERE IDPersona =" + IDPersona;
+                "'" + IdLocalidad + "',CP = " + CodPostal + ", Provincia = '" + IdProvincia +"' WHERE IDPersona =" + IdPersona;
 
             TransaccionSQLConectado(sentencia);
+            mensajeOk = "El registro fue modificado con éxito!";
+            return mensajeOk;
         }
 
-        public void EliminarEstudiante()
+        public string EliminarPersona(string rol)
         {
-            sentencia = "DELETE FROM Personas WHERE Id =" +IDPersona;
+            sentencia = "DELETE FROM Personas WHERE Id =" +IdPersona;
             TransaccionSQLConectado(sentencia);
+            mensajeOk = "El registro fue eliminado con éxito!";
+            return mensajeOk;
         }
         private void TransaccionSQLConectado(string query)
         {

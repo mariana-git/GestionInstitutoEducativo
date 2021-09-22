@@ -29,6 +29,7 @@ namespace CapaVista.ControlesdeUsuario
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uc_GestionPersonas));
             this.btnConsultar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnGuardarCambios = new System.Windows.Forms.Button();
@@ -60,18 +61,23 @@ namespace CapaVista.ControlesdeUsuario
             this.label32 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbLocalidad = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbProvincia = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblRol = new System.Windows.Forms.Label();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.picLupa = new System.Windows.Forms.PictureBox();
+            this.cmbPartido = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).BeginInit();
             this.flpDatos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLupa)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConsultar
@@ -82,9 +88,9 @@ namespace CapaVista.ControlesdeUsuario
             this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.Aqua;
-            this.btnConsultar.Location = new System.Drawing.Point(13, 31);
+            this.btnConsultar.Location = new System.Drawing.Point(34, 108);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(282, 45);
+            this.btnConsultar.Size = new System.Drawing.Size(120, 45);
             this.btnConsultar.TabIndex = 44;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
@@ -98,9 +104,9 @@ namespace CapaVista.ControlesdeUsuario
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.Aqua;
-            this.btnAgregar.Location = new System.Drawing.Point(13, 82);
+            this.btnAgregar.Location = new System.Drawing.Point(162, 108);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(282, 45);
+            this.btnAgregar.Size = new System.Drawing.Size(120, 45);
             this.btnAgregar.TabIndex = 46;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -116,9 +122,9 @@ namespace CapaVista.ControlesdeUsuario
             this.btnGuardarCambios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarCambios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarCambios.ForeColor = System.Drawing.Color.Navy;
-            this.btnGuardarCambios.Location = new System.Drawing.Point(13, 82);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(162, 108);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
-            this.btnGuardarCambios.Size = new System.Drawing.Size(282, 45);
+            this.btnGuardarCambios.Size = new System.Drawing.Size(120, 45);
             this.btnGuardarCambios.TabIndex = 45;
             this.btnGuardarCambios.Text = "Guardar Cambios";
             this.btnGuardarCambios.UseVisualStyleBackColor = false;
@@ -133,9 +139,9 @@ namespace CapaVista.ControlesdeUsuario
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Navy;
-            this.btnEliminar.Location = new System.Drawing.Point(13, 133);
+            this.btnEliminar.Location = new System.Drawing.Point(162, 108);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(282, 45);
+            this.btnEliminar.Size = new System.Drawing.Size(120, 45);
             this.btnEliminar.TabIndex = 47;
             this.btnEliminar.Text = "Eliminar Registro";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -143,13 +149,14 @@ namespace CapaVista.ControlesdeUsuario
             // 
             // dgvPersonas
             // 
-            this.dgvPersonas.BackgroundColor = System.Drawing.Color.DarkSlateBlue;
+            this.dgvPersonas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvPersonas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvPersonas.BackgroundColor = System.Drawing.Color.Indigo;
             this.dgvPersonas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPersonas.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dgvPersonas.Location = new System.Drawing.Point(301, 0);
+            this.dgvPersonas.Location = new System.Drawing.Point(298, 81);
             this.dgvPersonas.Name = "dgvPersonas";
-            this.dgvPersonas.Size = new System.Drawing.Size(856, 759);
+            this.dgvPersonas.Size = new System.Drawing.Size(821, 672);
             this.dgvPersonas.TabIndex = 85;
             // 
             // btnVolver
@@ -162,9 +169,9 @@ namespace CapaVista.ControlesdeUsuario
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.Navy;
-            this.btnVolver.Location = new System.Drawing.Point(13, 31);
+            this.btnVolver.Location = new System.Drawing.Point(34, 108);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(282, 45);
+            this.btnVolver.Size = new System.Drawing.Size(120, 45);
             this.btnVolver.TabIndex = 88;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -206,19 +213,21 @@ namespace CapaVista.ControlesdeUsuario
             this.flpDatos.Controls.Add(this.label32);
             this.flpDatos.Controls.Add(this.textBox8);
             this.flpDatos.Controls.Add(this.label33);
-            this.flpDatos.Controls.Add(this.comboBox3);
-            this.flpDatos.Controls.Add(this.label34);
             this.flpDatos.Controls.Add(this.textBox7);
             this.flpDatos.Controls.Add(this.label27);
-            this.flpDatos.Controls.Add(this.comboBox2);
+            this.flpDatos.Controls.Add(this.cmbLocalidad);
+            this.flpDatos.Controls.Add(this.label34);
+            this.flpDatos.Controls.Add(this.cmbPartido);
+            this.flpDatos.Controls.Add(this.label2);
+            this.flpDatos.Controls.Add(this.cmbProvincia);
             this.flpDatos.Controls.Add(this.label29);
             this.flpDatos.Controls.Add(this.maskedTextBox2);
             this.flpDatos.Controls.Add(this.label26);
             this.flpDatos.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flpDatos.Location = new System.Drawing.Point(0, 181);
+            this.flpDatos.Location = new System.Drawing.Point(0, 177);
             this.flpDatos.Margin = new System.Windows.Forms.Padding(0);
             this.flpDatos.Name = "flpDatos";
-            this.flpDatos.Size = new System.Drawing.Size(282, 495);
+            this.flpDatos.Size = new System.Drawing.Size(282, 520);
             this.flpDatos.TabIndex = 90;
             // 
             // label1
@@ -454,20 +463,20 @@ namespace CapaVista.ControlesdeUsuario
             this.label33.Text = "Depto";
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox3
+            // cmbLocalidad
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(112, 368);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(167, 21);
-            this.comboBox3.TabIndex = 104;
+            this.cmbLocalidad.FormattingEnabled = true;
+            this.cmbLocalidad.Location = new System.Drawing.Point(112, 398);
+            this.cmbLocalidad.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.cmbLocalidad.Name = "cmbLocalidad";
+            this.cmbLocalidad.Size = new System.Drawing.Size(167, 21);
+            this.cmbLocalidad.TabIndex = 104;
             // 
             // label34
             // 
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label34.Location = new System.Drawing.Point(29, 368);
+            this.label34.Location = new System.Drawing.Point(29, 398);
             this.label34.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(77, 20);
@@ -477,7 +486,7 @@ namespace CapaVista.ControlesdeUsuario
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(112, 399);
+            this.textBox7.Location = new System.Drawing.Point(112, 368);
             this.textBox7.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(167, 20);
@@ -487,28 +496,28 @@ namespace CapaVista.ControlesdeUsuario
             // 
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label27.Location = new System.Drawing.Point(78, 399);
+            this.label27.Location = new System.Drawing.Point(70, 368);
             this.label27.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(28, 20);
+            this.label27.Size = new System.Drawing.Size(36, 20);
             this.label27.TabIndex = 108;
             this.label27.Text = "CP";
             this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox2
+            // cmbProvincia
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(112, 429);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(167, 21);
-            this.comboBox2.TabIndex = 106;
+            this.cmbProvincia.FormattingEnabled = true;
+            this.cmbProvincia.Location = new System.Drawing.Point(112, 460);
+            this.cmbProvincia.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.cmbProvincia.Name = "cmbProvincia";
+            this.cmbProvincia.Size = new System.Drawing.Size(167, 21);
+            this.cmbProvincia.TabIndex = 106;
             // 
             // label29
             // 
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label29.Location = new System.Drawing.Point(33, 429);
+            this.label29.Location = new System.Drawing.Point(33, 460);
             this.label29.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(73, 20);
@@ -518,7 +527,7 @@ namespace CapaVista.ControlesdeUsuario
             // 
             // maskedTextBox2
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(112, 460);
+            this.maskedTextBox2.Location = new System.Drawing.Point(112, 491);
             this.maskedTextBox2.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.Size = new System.Drawing.Size(167, 20);
@@ -528,7 +537,7 @@ namespace CapaVista.ControlesdeUsuario
             // 
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label26.Location = new System.Drawing.Point(59, 460);
+            this.label26.Location = new System.Drawing.Point(59, 491);
             this.label26.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(47, 20);
@@ -545,9 +554,9 @@ namespace CapaVista.ControlesdeUsuario
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.Aqua;
-            this.btnCerrar.Location = new System.Drawing.Point(13, 700);
+            this.btnCerrar.Location = new System.Drawing.Point(13, 711);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(282, 45);
+            this.btnCerrar.Size = new System.Drawing.Size(269, 45);
             this.btnCerrar.TabIndex = 91;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
@@ -556,36 +565,83 @@ namespace CapaVista.ControlesdeUsuario
             // lblRol
             // 
             this.lblRol.AutoSize = true;
-            this.lblRol.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.lblRol.BackColor = System.Drawing.Color.Indigo;
             this.lblRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.lblRol.ForeColor = System.Drawing.Color.MediumSpringGreen;
-            this.lblRol.Location = new System.Drawing.Point(606, 329);
+            this.lblRol.Location = new System.Drawing.Point(59, 27);
             this.lblRol.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(0, 31);
+            this.lblRol.Size = new System.Drawing.Size(179, 31);
             this.lblRol.TabIndex = 92;
+            this.lblRol.Text = "TipoPersona";
             this.lblRol.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.BackColor = System.Drawing.Color.Cyan;
+            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Location = new System.Drawing.Point(34, 76);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(248, 26);
+            this.txtBusqueda.TabIndex = 93;
+            this.txtBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // picLupa
+            // 
+            this.picLupa.BackColor = System.Drawing.Color.Indigo;
+            this.picLupa.Image = ((System.Drawing.Image)(resources.GetObject("picLupa.Image")));
+            this.picLupa.Location = new System.Drawing.Point(6, 74);
+            this.picLupa.Name = "picLupa";
+            this.picLupa.Size = new System.Drawing.Size(28, 31);
+            this.picLupa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picLupa.TabIndex = 94;
+            this.picLupa.TabStop = false;
+            // 
+            // cmbPartido
+            // 
+            this.cmbPartido.FormattingEnabled = true;
+            this.cmbPartido.Location = new System.Drawing.Point(112, 429);
+            this.cmbPartido.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.cmbPartido.Name = "cmbPartido";
+            this.cmbPartido.Size = new System.Drawing.Size(167, 21);
+            this.cmbPartido.TabIndex = 116;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(47, 429);
+            this.label2.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(59, 20);
+            this.label2.TabIndex = 115;
+            this.label2.Text = "Partido";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // uc_GestionPersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Indigo;
-            this.Controls.Add(this.lblRol);
-            this.Controls.Add(this.flpDatos);
+            this.Controls.Add(this.picLupa);
+            this.Controls.Add(this.txtBusqueda);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.dgvPersonas);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnGuardarCambios);
             this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.lblRol);
+            this.Controls.Add(this.flpDatos);
+            this.Controls.Add(this.dgvPersonas);
             this.Name = "uc_GestionPersonas";
-            this.Size = new System.Drawing.Size(1157, 759);
-            this.Load += new System.EventHandler(this.uc_GestionPersonas_Load);
+            this.Size = new System.Drawing.Size(1157, 796);
+            this.Load += new System.EventHandler(this.Uc_GestionPersonas_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Uc_GestionPersonas_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).EndInit();
             this.flpDatos.ResumeLayout(false);
             this.flpDatos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLupa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -622,16 +678,20 @@ namespace CapaVista.ControlesdeUsuario
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbLocalidad;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbProvincia;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label lblRol;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.PictureBox picLupa;
+        private System.Windows.Forms.ComboBox cmbPartido;
+        private System.Windows.Forms.Label label2;
     }
 }

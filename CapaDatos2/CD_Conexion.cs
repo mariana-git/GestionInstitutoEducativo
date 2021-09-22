@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System;
 using System.Data.OleDb;
 using MySql.Data.MySqlClient;
 
@@ -25,12 +26,13 @@ namespace CapaDatos
 
         #region CONEXION MYSQL (ACTIVADO)
         //Parámetros para la conexion Mysql
-        private readonly MySqlConnection CN = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=personas;sslmode=none;persistsecurityinfo=true;");
+        private readonly MySqlConnection CN = new MySqlConnection("datasource=127.0.0.1;port=3306;username=root;password=;database=gestioninstituto;sslmode=none;persistsecurityinfo=true;");
         public MySqlConnection Conectar()
         {
             //método para ABRIR la conexion
+
             if (CN.State == ConnectionState.Open) CN.Close();
-            CN.Open();
+            CN.Open();            
             return CN;
         }
         public MySqlConnection Desconectar()
