@@ -5,6 +5,7 @@ namespace CapaVista
 {
     public partial class frmInicio : Form
     {
+
         #region ATRIBUTOS
 
         private int xClick = 0, yClick = 0;//para el metodo del evento MouseMove

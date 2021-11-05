@@ -1,14 +1,12 @@
 ﻿using System.Data;
-using System.Data.OleDb;
-using MySql.Data.MySqlClient;
+using CapaDatos;
 
-namespace CapaDatos
+namespace CapaLogica
 {
-    public class CD_CargaCombobox : CD_Conexion
+    class CL_CargaCombobox
     {
-        
         private DataTable DT = new DataTable();
-        private CD_EjecuatarTransaccion Transaccion = new CD_EjecuatarTransaccion();
+        private CD_CargaCombobox DatosCMB = new CD_CargaCombobox();
 
         #region ATRIBUTOS
         private string tabla;
@@ -21,15 +19,15 @@ namespace CapaDatos
         public string CampoNombre { get => campoNombre; set => campoNombre = value; }
         #endregion
 
-        public DataTable CargarCombos ()
+        public DataTable CargarCBM()
         {
-            DT.Clear();
-            string sentencia = $"SELECT {CampoID}, {CampoNombre} FROM {Tabla} ORDER BY {CampoNombre};";
-            DT = Transaccion.ModoConectado(sentencia);
-            return DT;
+            DatosCMB.Tabla = this.Tabla;
+            DatosCMB.CampoID = this.CampoID;
+            DatosCMB.CampoNombre = this.CampoNombre;
 
-
+            DataTable tabla = new DataTable();
+            tabla = DatosCMB.CargarCombos();
+            return tabla;
         }
-
     }
 }

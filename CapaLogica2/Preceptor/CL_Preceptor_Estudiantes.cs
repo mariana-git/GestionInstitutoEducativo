@@ -1,11 +1,12 @@
 ﻿using System;
+using CapaDatos;
 using System.Data;
 
 namespace CapaLogica.Preceptor
 {
     public class CL_Preceptor_Personas
     {
-        private CapaDatos.CD_Personas Personas = new CapaDatos.CD_Personas();
+        private CD_Personas Personas = new CD_Personas();
 
         private DataTable DT = new DataTable();
 

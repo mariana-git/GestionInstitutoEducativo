@@ -4,14 +4,11 @@ using MySql.Data.MySqlClient;
 
 namespace CapaDatos
 {
-    public class CD_Personas : CD_Conexion
+    public class CD_Personas : CD_Conexion 
     {
-        
 
+        private CD_EjecuatarTransaccion Transaccion = new CD_EjecuatarTransaccion();
         private DataTable DT = new DataTable();
-        private CD_Conexion Conexion = new CD_Conexion();
-        private MySqlCommand Comando = new MySqlCommand();
-        private MySqlDataReader leer;
 
         #region ATRIBUTOS
         private int idpersona, legajo, cuil, codPostal, tipoDoc, idlocalidad, idprovincia, numeroCalle;
@@ -36,12 +33,6 @@ namespace CapaDatos
         public string Depto { get => depto; set => depto = value; }
         public string Email { get => email; set => email = value; }
 
-
-
-
-
-
-
         #endregion
 
         #region METODOS 
@@ -52,29 +43,21 @@ namespace CapaDatos
                     $" OR Apellido LIKE '%{busqueda}%' OR Documento LIKE '%{busqueda}%' OR Legajo LIKE '%{busqueda}%');";
            else sentencia = $"SELECT * FROM Personas WHERE IDRol = {rol};";
 
-            Comando.Connection = Conexion.Conectar();
-            Comando.CommandText = sentencia;
-            Comando.CommandTimeout = 15;
-            leer = Comando.ExecuteReader();
-            DT.Load(leer);
-            if (DT.Rows.Count == 0) throw new Exception("LA BUSQUEDA NO ARROJÓ RESULTADOS\n\n");
-            Desconectar();
+            DT = Transaccion.ModoConectado(sentencia);
             return DT;
         }
 
-        public string AgregarPersona(string rol)
+        public void AgregarPersona(string rol)
         {
             sentencia = "INSERT INTO Personas (IDPersona, IDRol, Legajo, Nombre, Apelllido, FechaNac, Documento, " +
                 "TipoDoc,CUIL,Telefono,Calle,Numero,Piso,Departamento, IDLocalidad, CP, IDProvincia) " +
                 $"VALUES (NULL, 1,{Legajo},{Nombre},{Apellido}, {FechaNac},{Documento},{TipoDoc},{Cuil},{Telefono}, {Calle}, {NumeroCalle} +" +
                 $", {Piso}, {Depto},{IdLocalidad},{CodPostal}, {IdProvincia});";
            
-            TransaccionSQLConectado(sentencia);
-            mensajeOk = "El registro fue agregado con éxito!";
-            return mensajeOk;
+            Transaccion.ModoDesconectado(sentencia);
         }
 
-        public string ModificarPersona(string rol)
+        public void ModificarPersona(string rol)
         {
             sentencia = "UPDATE Personas SET " +
                 "Legajo = " + Legajo + ", Nombre ='" + Nombre + "',Apellido = '" + Apellido + "',FechaNac = '" + FechaNac + "'," +
@@ -82,26 +65,15 @@ namespace CapaDatos
                 "Calle ='" + Calle + "',Numero = " + NumeroCalle + ", Piso = '" + Piso + "',Departamento = '" + Depto + "', Localidad = " +
                 "'" + IdLocalidad + "',CP = " + CodPostal + ", Provincia = '" + IdProvincia +"' WHERE IDPersona =" + IdPersona;
 
-            TransaccionSQLConectado(sentencia);
-            mensajeOk = "El registro fue modificado con éxito!";
-            return mensajeOk;
+            Transaccion.ModoDesconectado(sentencia);
         }
 
-        public string EliminarPersona(string rol)
+        public void EliminarPersona(string rol)
         {
             sentencia = "DELETE FROM Personas WHERE Id =" +IdPersona;
-            TransaccionSQLConectado(sentencia);
-            mensajeOk = "El registro fue eliminado con éxito!";
-            return mensajeOk;
+            Transaccion.ModoDesconectado(sentencia);
         }
-        private void TransaccionSQLConectado(string query)
-        {
-            //Método para realizar todas las consultas en modo conectado
-            Comando.Connection = Conexion.Conectar();
-            Comando.CommandText = query;
-            Comando.ExecuteNonQuery();
-            Desconectar();
-        }
+
 
         #endregion
     }

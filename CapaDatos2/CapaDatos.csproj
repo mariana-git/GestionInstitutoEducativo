@@ -46,7 +46,7 @@
     <Compile Include="CD_CargaCombobox.cs" />
     <Compile Include="CD_Conexion.cs" />
     <Compile Include="CD_Personas.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="CD_EjecuatarTransaccion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
